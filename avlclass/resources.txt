@@ -1,0 +1,25 @@
+Deletion for tree
+
+https://www.techiedelight.com/deletion-from-bst/
+
+
+AVL TREE
+
+https://gist.github.com/Harish-R/097688ac7f48bcbadfa5
+
+
+
+Visualization for tree
+https://visualgo.net/en/bst?slide=1
+
+
+
+AVL Trees & Rotations (Self-Balancing Binary Search Trees)
+
+https://www.youtube.com/watch?v=vRwi_UcZGjU&t=557s
+
+
+10.1 AVL Tree - Insertion and Rotations
+
+https://www.youtube.com/watch?v=jDM6_TnYIqE&t=1139s
+
