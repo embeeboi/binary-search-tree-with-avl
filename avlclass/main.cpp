@@ -34,11 +34,11 @@ class BST
             t = new node;
             t->data = x;
             t->height = 0;
-            t->left = t->right = NULL;
+            t->left = t->right = NULL;///Create new tree
         }
         else if(x < t->data)
         {
-            t->left = insert(x, t->left);
+            t->left = insert(x, t->left);//Insert node to left child node
             if(height(t->left) - height(t->right) == 2)
             {
                 if(x < t->left->data)
@@ -63,18 +63,17 @@ class BST
         return t;
     }
 
-    node* singleRightRotate(node* &t)
+    node* singleRightRotate(node* &balancedbeyblade)
     {
-        node* u = t->left;//U = the left of t
-        node* m = u->right;
-        t->left = u->right;//u->right == t->left
-        u->right = t;
-        t->height = max(height(t->left), height(t->right))+1;
-        u->height = max(height(u->left), t->height)+1;
-        return u;
-
-
-
+        node* newtree = balancedbeyblade->left;//U = the left of t
+        
+        //NEW TREE right rotation 
+        ///right tree = roatator left
+        balancedbeyblade->left = newtree->right;//u->right == t->left
+        newtree->right = balancedbeyblade;
+        balancedbeyblade->height = max(height(balancedbeyblade->left), height(balancedbeyblade->right))+1;
+        newtree->height = max(height(newtree->left), balancedbeyblade->height)+1;
+        return newtree;
 
     }
 
@@ -88,14 +87,14 @@ class BST
 
 
 
-    node* singleLeftRotate(node* &t)
+    node* singleLeftRotate(node* &rotator)
     {
-        node* u = t->right;
-        t->right = u->left;
-        u->left = t;
-        t->height = max(height(t->left), height(t->right))+1;
-        u->height = max(height(t->right), t->height)+1 ;
-        return u;
+        node* leftrotation = rotator->right;
+        rotator->right = leftrotation->left;
+        leftrotation->left = rotator;
+        rotator->height = max(height(rotator->left), height(rotator->right))+1;
+        leftrotation->height = max(height(rotator->right), rotator->height)+1 ;
+        return leftrotation;
     }
 
 
